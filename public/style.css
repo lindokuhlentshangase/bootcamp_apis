@@ -1,0 +1,107 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.header {
+    text-align: center;
+    padding: 2em 0;
+    background-color: #2196f3;
+    color: white;
+    margin-bottom: 1em;
+}
+
+.main {
+    padding: 1em;
+}
+
+.card h2, .card h3, .card h4 {
+    margin-top: 0;
+}
+
+.card {
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+    padding: 2em;
+}
+
+.input-field input[type="text"] {
+    border-bottom: 1px solid #2196f3;
+    box-shadow: none;
+}
+
+.input-field label {
+    color: #2196f3;
+}
+
+.input-field input[type="text"]:focus + label {
+    color: #1976d2;
+}
+
+.input-field input[type="text"]:focus {
+    border-bottom: 1px solid #1976d2;
+    box-shadow: 0 1px 0 0 #1976d2;
+}
+
+.btn {
+    background-color: #2196f3;
+    color: white;
+    text-transform: none;
+    margin-bottom: 1em;
+}
+
+.btn:hover {
+    background-color: #1976d2;
+}
+
+.chip {
+    background-color: #e0f7fa;
+    font-weight: bold;
+    margin: 0.5em 0;
+    padding: 0.2em 0.5em;
+    border-radius: 8px;
+    color: #303f9f;
+}
+
+/* Additional styles for word game buttons */
+.wordGame {
+    margin-top: 2em;
+}
+
+.wordGame .input-field {
+    margin-bottom: 1em;
+}
+
+.wordGame .result {
+    background-color: gray;
+    font-weight: bolder;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    color: rgba(56, 56, 197, 0.829);
+}
+
+.wordGame .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-top: 1em;
+}
+
+.wordGame button {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.5em;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.wordGame button:hover {
+    background-color: #1976d2;
+}

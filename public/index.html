@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp Widget APIs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="./indexData.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bootcamp APIs</h1>
+        </div>
+        <div class="main" x-data="bootcampAPIWidgets">
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <h2>Enough Airtime</h2>
+                            <div style="margin-bottom: 1em;">
+                                <span>Remaining Balance: </span>
+                                <span x-text="remainingBalance" class="chip blue lighten-4"></span>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="usage" placeholder="Enter your usage" x-model="usage">
+                                <label for="usage">Usage</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="airtime" placeholder="Enter Airtime balance" x-model="airtime">
+                                <label for="airtime">Available Airtime Balance</label>
+                            </div>
+                            <button class="btn" @click="showRemainingBalance();">Get Remaining Balance</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="card">
+                        <div class="card-content">
+                            <h2>WordGame Widget</h2>
+                            <div class="input-field">
+                                <input type="text" id="sentence" placeholder="Enter your sentence" x-model="sentence">
+                                <label for="sentence">Analyze Your Sentence</label>
+                            </div>
+                            <div class="chip blue lighten-4" x-text="longestWrd"></div>
+                            <div class="btn-container">
+                                <button class="btn" @click="getLongestWord();">Get Longest Word</button>
+                                <button class="btn" @click="getShortestWord();">Get Shortest Word</button>
+                                <button class="btn" @click="getSumOfWords();">Get Sum of Words</button>
+                            </div>
+                            <div class="chip blue lighten-4" x-text="shortestWrd"></div>
+                            <div class="chip blue lighten-4" x-text="wrdLengths"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content">
+                            <h2>Total Phone Bill</h2>
+                            <div style="margin-bottom: 1em;">
+                                <span>Total Phone Bill: </span>
+                                <span x-text="totalPhoneBill" class="chip blue lighten-4"></span>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="bill" placeholder="Enter your usage e.g sms,data,sms..." x-model="bill">
+                                <label for="bill">Bill</label>
+                            </div>
+                            <button class="btn" @click="showTotalPhoneBill();">Total Phone Bill</button>
+                            <hr>
+                            <h3>Prices</h3>
+                            <div style="margin-bottom: 1em;">
+                                <span>Call cost price: </span>
+                                <span x-text="callCost" class="chip blue lighten-4"></span>
+                                <br>
+                                <div style="margin-top: 1em;">
+                                    <span>sms cost price: </span>
+                                    <span x-text="smsCost" class="chip blue lighten-4"></span>
+                                </div>
+                            </div>
+                            <button class="btn" @click="showPrices();">View Current Prices</button>
+                            <hr>
+                            <!-- <h4>Change Prices</h4> -->
+                            <div style="margin-bottom: 1em;">
+                                <span x-text="message" class="chip green lighten-4"></span>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="type" placeholder="sms or call" x-model="type">
+                                <label for="type">Type</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="text" id="newPrice" placeholder="Enter new cost amount" x-model="newPrice">
+                                <label for="newPrice">Price</label>
+                            </div>
+                            <button class="btn" @click="changePrice();">Change</button>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
